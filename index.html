@@ -114,6 +114,37 @@ body {
   color: #00c6ff;
 }
 </style>
+  /* ELECTRIC GLOW */
+.logo {
+  text-shadow:
+    0 0 10px rgba(0,198,255,0.6),
+    0 0 20px rgba(106,0,255,0.6);
+}
+
+/* SECTION EXPLOSION EFFECT */
+.section.show {
+  animation: explode 1.2s ease-out forwards;
+}
+
+@keyframes explode {
+  0% {
+    opacity: 0;
+    transform: scale(0.85) translateY(80px);
+    filter: blur(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* ELECTRIC PULSE ORBS */
+.orb {
+  box-shadow:
+    0 0 40px rgba(0,198,255,0.25),
+    inset 0 0 40px rgba(106,0,255,0.2);
+}
 </head>
 
 <body>
