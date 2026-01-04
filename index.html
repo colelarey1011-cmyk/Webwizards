@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>WebWizards</title>
+
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #000;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  /* 3D LOGO CONTAINER */
+  #logo3d-container {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 240px;
+    height: 240px;
+    z-index: 1000;
+    pointer-events: none;
+  }
+
+  /* CENTER CONTENT */
+  .content {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 80px;
+    max-width: 900px;
+  }
+
+  h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 1.2rem;
+    opacity: 0.85;
+    line-height: 1.6;
+  }
+</style>
+</head>
+
+<body>
+
+<div id="logo3d-container"></div>
+
+<div class="content">
+  <h1>WebWizards</h1>
+  <p>
+    WebWizards builds high-end digital experiences for brands that demand presence,
+    power, and precision.  
+    We combine modern engineering, immersive motion, and luxury design
+    to create websites that feel alive.
+    <br><br>
+    This is not just a website.  
+    This is a digital identity.
+  </p>
+</div>
+
+<script src="https://unpkg.com/three@0.158.0/build/three.min.js"></script>
+<script>
+  const container = document.getElementById("logo3d-container");
+
+  const scene = new THREE.Scene();
+
+  const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 100);
+  camera.position.z = 4;
+
+  const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+  renderer.setSize(240, 240);
+  renderer.setPixelRatio(window.devicePixelRatio);
+  container.appendChild(renderer.domElement);
+
+  // LIGHTING
+  const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
+  scene.add(ambientLight);
+
+  const directionalLight = new THREE.DirectionalLight(0x66ccff, 1.4);
+  directionalLight.position.set(4, 4, 6);
+  scene.add(directionalLight);
+
+  // PLACEHOLDER 3D OBJECT (REPLACE WITH LOGO LATER)
+  const geometry = new THREE.TorusKnotGeometry(0.9, 0.3, 140, 18);
+  const material = new THREE.MeshStandardMaterial({
+    color: 0xffd27d,
+    metalness: 0.9,
+    roughness: 0.25,
+    emissive: 0x111111
+  });
+
+  const mesh = new THREE.Mesh(geometry, material);
+  scene.add(mesh);
+
+  function animate() {
+    requestAnimationFrame(animate);
+    mesh.rotation.y += 0.006;
+    mesh.rotation.x += 0.004;
+    renderer.render(scene, camera);
+  }
+
+  animate();
+</script>
+
+</body>
+</html>
