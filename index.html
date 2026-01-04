@@ -3,7 +3,36 @@
 <head>
 <meta charset="UTF-8">
 <title>WebWizards</title>
+.section {
+  margin: 120px auto;
+  max-width: 800px;
+  padding: 0 20px;
+}
 
+.section h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #6a00ff, #00c6ff);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.section p,
+.section li {
+  opacity: 0.85;
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+.section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.section li::before {
+  content: "✦ ";
+  color: #00c6ff;
+}
 <style>
 body {
   margin: 0;
@@ -78,6 +107,29 @@ body {
 <p class="subtitle">Premium Websites for Businesses</p>
 
 <div class="cube"></div>
+  <section class="section">
+  <h2>What We Do</h2>
+  <p>
+    WebWizards designs and builds modern, high-end websites for businesses
+    that want to look professional, trusted, and elite online.
+  </p>
+</section>
+
+<section class="section">
+  <h2>Our Services</h2>
+  <ul>
+    <li>Custom Business Websites</li>
+    <li>Modern UI / UX Design</li>
+    <li>Mobile-Friendly Websites</li>
+    <li>Website Redesigns</li>
+  </ul>
+</section>
+
+<section class="section">
+  <h2>Contact Us</h2>
+  <p>📞 0753083785</p>
+  <p>✉️ D.page.webwiz@gmail.com</p>
+</section>
 
 </body>
 </html>
