@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>WebWizards</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  background: radial-gradient(circle at top, #1a1a2e, #000);
+  font-family: Arial, sans-serif;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+}
+
+.logo {
+  margin-top: 80px;
+  font-size: 50px;
+  font-weight: bold;
+  background: linear-gradient(90deg, #6a00ff, #00c6ff);
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: spin 6s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(360deg); }
+}
+
+.subtitle {
+  opacity: 0.8;
+  margin-bottom: 50px;
+}
+
+.cube {
+  width: 80px;
+  height: 80px;
+  margin: auto;
+  background: linear-gradient(45deg, #6a00ff, #00c6ff);
+  animation: cube 4s linear infinite;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+}
+
+@keyframes cube {
+  from { transform: rotateX(0deg) rotateY(0deg); }
+  to { transform: rotateX(360deg) rotateY(360deg); }
+}
+
+.orb {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(0,198,255,0.25), transparent);
+  border-radius: 50%;
+  animation: float 6s ease-in-out infinite;
+}
+
+.orb.one { top: 20%; left: 10%; }
+.orb.two { bottom: 10%; right: 10%; animation-delay: 2s; }
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-40px); }
+  100% { transform: translateY(0); }
+}
+</style>
+</head>
+
+<body>
+
+<div class="orb one"></div>
+<div class="orb two"></div>
+
+<h1 class="logo">WebWizards</h1>
+<p class="subtitle">Premium Websites for Businesses</p>
+
+<div class="cube"></div>
+
+</body>
+</html>
