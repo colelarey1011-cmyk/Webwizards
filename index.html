@@ -148,52 +148,44 @@ body {
 </head>
 
 <body>
+<canvas id="particles"></canvas>
 
-<div class="orb one"></div>
-<div class="orb two"></div>
+<nav class="nav">
+  <div class="nav-logo">WebWizards</div>
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
 
-<h1 class="logo">WebWizards</h1>
-<p class="subtitle">Premium Websites for Businesses</p>
+<section class="hero">
+  <h1>Elite Websites<br>That Command Attention</h1>
+  <p>We design and build premium, high-impact websites for serious businesses.</p>
+  <a href="#contact" class="cta">Get Your Website</a>
+</section>
 
-<div class="cube"></div>
-
-<section class="section">
+<section class="section" id="services">
   <h2>What We Do</h2>
   <p>
-    WebWizards builds elite, modern websites for businesses that want
-    to look premium, professional, and trusted online.
+    We craft modern, cinematic, conversion-focused websites
+    that elevate your brand and make customers trust you instantly.
   </p>
+
+  <div class="cards">
+    <div class="card">Custom Business Websites</div>
+    <div class="card">Premium UI / UX Design</div>
+    <div class="card">Mobile-First Development</div>
+    <div class="card">Website Redesigns</div>
+  </div>
 </section>
 
-<section class="section">
-  <h2>Our Services</h2>
-  <ul>
-    <li>Custom Business Websites</li>
-    <li>Modern UI / UX Design</li>
-    <li>Mobile-First Development</li>
-    <li>Website Redesigns</li>
-  </ul>
-</section>
-
-<section class="section">
+<section class="section" id="contact">
   <h2>Contact</h2>
   <p>📞 0753083785</p>
   <p>✉️ D.page.webwiz@gmail.com</p>
 </section>
 
-<script>
-const sections = document.querySelectorAll('.section');
 
-window.addEventListener('scroll', () => {
-  const trigger = window.innerHeight * 0.85;
-  sections.forEach(section => {
-    const top = section.getBoundingClientRect().top;
-    if (top < trigger) {
-      section.classList.add('show');
-    }
-  });
-});
-</script>
 
 </body>
 </html>
